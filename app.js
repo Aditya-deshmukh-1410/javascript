@@ -3,7 +3,7 @@ let person  = {
     age: 20,
     gender: "male"
 }
-
+ 
 console.log(person.name);
 
 // Q2   
