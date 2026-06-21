@@ -4,7 +4,7 @@ let student  = {
     name: "ram",
     grade: "A",
     subject: "Maths"
-};
+};   
 
 console.log(student.grade);
  
