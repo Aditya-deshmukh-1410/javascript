@@ -8,7 +8,7 @@ let student  = {
 
 console.log(student.grade);
  
-
+  
 //q2
 
 const arr = [40,50,80];
