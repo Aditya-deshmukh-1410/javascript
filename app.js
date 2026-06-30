@@ -1,4 +1,4 @@
-let person  = {
+let person  = { 
     name:  "aditya",
     age: 20,
     gender: "male"
