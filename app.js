@@ -6,7 +6,7 @@ let person  = {
  
 console.log(person.name);
 
-// Q2   
+// Q2    
 let arr = [2,3,4,5];
 
 const square = arr.map((sq)=>{
