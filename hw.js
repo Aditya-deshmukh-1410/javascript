@@ -6,7 +6,7 @@ let student  = {
     subject: "Maths"
 };   
 
-console.log(student.grade);
+console.log(student.grade); 
  
   
 //q2
