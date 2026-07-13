@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 
+       Q4) 
+         Create a form with fields for *name, email, and password*. Using JavaScript, implement client-side validation for the following criteria:
+
+            a. *Name:* Should contain only alphabetic characters.
+            b. *Email:* Should match a valid email format.
+            c. *Password:* Should have a minimum length of *8 characters, including at least **one uppercase    letter, one lowercase letter, and one digit*.
+            d. After validating the form, *store the name and email in local storage*.
+
+
+        Q5) 
+          Create a contact form with fields for *name, email, and query*. Implement JavaScript validation to ensure:
+
+            a. *Name:* Is not empty and contains only alphabetic characters.
+            b. *Email:* Matches a valid email format.
+            c. *Query:* Is not empty and less than *1000 characters*.
+            d. After validation, *store the name, email, and query in local storage*    
+    -->
+
+
+    Name: <input type="text" name="" id="name"> <br>
+    Email: <input type="text" name="" id="email"> <br>
+    Password: <input type="password" name="" id="pass"> <br>
+    Query: <input type="text" name="" id="query"> <br>
+    
+    <button id="b1">Submit</button>
+
+    <script>
+        const b1 = document.getElementById("b1");
+        b1.addEventListener("click",()=>{
+
+            const name = document.getElementById("name").value;
+            const nameReg = /^[A-Za-z]+$/
+
+            const email = document.getElementById("email").value;
+            const emailReg = /[^\s@]+@[^\s@]+\.[^\s@]/
+
+            const pass = document.getElementById("pass").value;
+            const passReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+
+            const query = document.getElementById("query").value;
+
+            if(!nameReg.test(name)){
+                alert("enter valid name");
+            }else if(!emailReg.test(email)){
+                alert("enter valid email");
+            }else if(query.length < 10){
+                alert("Query must be at least 10 characters.");
+            }else if(!passReg.test(pass)){
+                alert("weak password");
+            }else{
+                localStorage.setItem("name", name);
+                localStorage.setItem("email", email);
+                alert("Form submitted sucessfully !!");
+            }
+            
+        })
+    </script>
+
+    
+</body>
+</html>

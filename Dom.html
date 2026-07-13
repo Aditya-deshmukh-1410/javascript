@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="title">Welcome<span style="display: none;">Aditya</span></h1>
+
+    <p class="text">First Paragraph</p>
+    <p class="text">Second Paragraph</p>
+
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+
+    <button>Click Me</button>
+
+    <script>
+        //document.getElementById()
+
+        let a = document.getElementById("title").innerText;
+        console.log(a);  //Welcome
+
+        let b = document.getElementById("title").innerHTML
+        console.log(b); // Welcome<span style="display: none;">Aditya</span>
+        
+        let c = document.getElementById("title").textContent
+        console.log(c); // WelcomeAditya
+        
+
+        // 2) document.getElementsByClassName()
+
+        let para = document.getElementsByClassName("text");
+        console.log(para);
+        console.log(para[0].innerText);
+        console.log(para[1].innerText);
+
+        // 3) document.getElementsByTagName()
+
+        let divs = document.getElementsByTagName("div");
+
+        console.log(divs);
+        divs[0].style.backgroundColor = "yellow";
+        
+        // 4) document.querySelector() -> Returns the first matching element using a CSS selector.
+
+        // in css -> # - id , . - class
+        let title = document.querySelector("#title");
+        console.log(title);
+        
+
+        let para1 = document.querySelector(".text");
+        console.log(para1);
+
+        let box = document.querySelectorAll(".box"); // returns nodelist
+        console.log(box[0]);
+        console.log(box[1]);
+        
+    </script>
+</body>
+</html>

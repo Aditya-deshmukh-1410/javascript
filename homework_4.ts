@@ -219,14 +219,17 @@ class School1 extends Institute implements Management{
         console.log(`${name} is added `);
     }
 
-    removeStudent(name:string): void {
-        const index = this.studentList.indexOf(name);
+    removeStudent(name:string): void { //use filter here !!
+        const ogLength = this.studentList.length;
 
-        if (index !== -1) {
-            this.studentList.splice(index, 1);
-            console.log(`${name} removed successfully.`);
+        this.studentList = this.studentList.filter((student)=>{
+            return student !== name;
+        })
+
+        if (this.studentList.length < ogLength) {
+            console.log(`${name} removed sucessfully!!`);
         } else {
-            console.log("Student not found.");
+            console.log("student not found");
         }
     }
 

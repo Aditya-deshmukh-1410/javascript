@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 
+     Q3) 
+        Create a new button *"clearButton"* that, when clicked, clears the click count from local storage and resets the counter.
+    -->
+
+    <p>Count : <span id="count">0</span></p>
+
+    <button onclick="inc()">increment</button>
+    <button onclick="dec()">decrement</button>
+    <button onclick="res()">reset</button>
+
+    <script>
+        let count = 0;
+
+        function inc(){
+            count++;
+            document.getElementById("count").textContent = count;
+        }
+
+        function dec(){
+            count--;
+            if (count<0) {
+                alert("count < 0")
+            } else {
+                document.getElementById("count").textContent = count;
+            }
+        }
+
+        function res(){
+            count = 0;
+            document.getElementById("count").textContent = count;
+        }
+    </script>
+
+    
+</body>
+</html>

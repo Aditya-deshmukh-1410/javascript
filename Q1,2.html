@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+     Q1) 
+        Demonstrate how to create a new <li> element, set its text content, and append it to an existing <ul> element on a web page using JavaScript. Add functionality to store the text content of the new <li> element in local storage. 
+
+     Q2)      
+        Implement an event listener that triggers an alert when a button with the ID *"myButton"* is clicked on a web page.
+    -->
+
+    Data:<input type="text" name="" id="inp"><br>
+    <button id="myButton">Add</button>
+    <hr>
+
+    <ul id="ul">
+        <li>js</li>
+        <li>python</li>
+        <li>java</li>
+    </ul>
+
+    <script>
+        const b1 = document.getElementById("myButton")
+        b1.addEventListener('click',()=>{
+            alert("new element added");
+            const inp = document.getElementById("inp").value;
+
+            const ul = document.getElementById("ul");
+            const li =document.createElement("li");
+
+            li.textContent =inp;
+            ul.append(li);
+            localStorage.setItem("data",inp)
+        })
+    </script>
+
+</body>
+</html>
